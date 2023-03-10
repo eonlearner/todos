@@ -1,0 +1,32 @@
+{% extends 'base/main.html' %}
+
+{% block content %}
+<div class="header-bar">
+<center>
+<h1>Get Latest News</h1>
+</center>
+</div>
+
+<div class="card-body">
+<center>
+<form>
+<br/>
+<input class="button" type="submit" value="Click Here To Get News" name="btn" />
+<br/><br/>
+<a href="{% url 'tasks' %}"> Previous Page <--</a>
+</form>
+{% for m in msg %}
+<h1>{{ m.title }}</h1>
+<a href={{ m.url }}>Read More </a>
+<br>
+{% if m.urlToImage %}
+<img src={{ m.urlToImage }} style="width:300px; height:auto;"></img>
+{% endif %}
+<hr/>
+{% endfor %}
+<br/>
+<a href="{% url 'tasks' %}"> Previous Page <--</a>
+
+</center>
+</div>
+{% endblock %}

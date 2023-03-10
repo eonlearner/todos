@@ -1,0 +1,21 @@
+{% extends 'base/main.html' %}
+
+{% block content %}
+
+<div class="header-bar">
+<h1> Request New Password Page</h1>
+</div>
+
+<div class="card-body">
+<form method="POST">
+{% csrf_token %}
+<input type="text" name="un" placeholder="Enter Your Register Email-Id " required />
+<br/><br/>
+<input class="button" type="submit" value="Request New Password" />
+<br/><br/>
+<h2> New Password Will Be Send To Your Register Email-Id</h2>
+</form>
+<p> --> <a href="{% url 'login' %}">Login Page</a></p>
+{{ msg }}
+</div>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'base/main.html' %}
+
+{% block content %}
+<div class="header-bar">
+<h1>Find Location on Maps</h1>
+</div>
+
+<div class="card-body">
+<form method="POST">
+{% csrf_token %}
+<br/>
+<input type="text" name="loc" placeholder=" Enter Location" required/>
+<br/><br/>
+<input class="button" type="submit" value="Show On Map" />
+<br/><br/>
+<a href="{% url 'tasks' %}"> Previous Page <--</a>
+<br/><br/>
+</form>
+{{ msg | safe }}
+
+</div>
+{% endblock %}
